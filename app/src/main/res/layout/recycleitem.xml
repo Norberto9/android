@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="20dp"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/restaurantTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/imageView3"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/imageView3"
+            android:ellipsize="end"
+            android:text="TextView"
+            android:textSize="28dp" />
+
+        <TextView
+            android:id="@+id/restaurantCity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/restaurantTitle"
+            android:layout_alignStart="@+id/restaurantTitle"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/restaurantAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/restaurantCity"
+            android:layout_alignStart="@+id/restaurantCity"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/restaurantPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/restaurantAddress"
+            android:layout_alignStart="@+id/restaurantAddress"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="10dp"
+            android:text="TextView" />
+
+        <TextView
+            android:id="@+id/restaurantPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="2dp"
+            android:layout_marginBottom="4dp"
+            android:text="TextView"
+            android:textSize="18sp" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

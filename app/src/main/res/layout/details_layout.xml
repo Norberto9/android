@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/detailsName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/detailsCity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="City"
+        app:layout_constraintEnd_toEndOf="@+id/detailsName"
+        app:layout_constraintStart_toStartOf="@+id/detailsName"
+        app:layout_constraintTop_toBottomOf="@+id/detailsName" />
+
+    <TextView
+        android:id="@+id/detailsCountry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:text="Country"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsCity" />
+
+    <TextView
+        android:id="@+id/detailsState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="State"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsCountry" />
+
+    <TextView
+        android:id="@+id/detailsArea"
+        android:layout_width="23dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="16dp"
+        android:text="Area"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsState" />
+
+    <TextView
+        android:id="@+id/latlon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="lat/lon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsArea" />
+
+    <TextView
+        android:id="@+id/detailsAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Address"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/latlon" />
+
+    <TextView
+        android:id="@+id/detailsPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Price"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsAddress" />
+
+    <TextView
+        android:id="@+id/detailsPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Phone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsPrice" />
+
+    <TextView
+        android:id="@+id/detailsReserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Reserve URL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsPhone" />
+
+    <TextView
+        android:id="@+id/detailsMobilReserveUrl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Mobil Reserve URL"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsReserve" />
+
+    <TextView
+        android:id="@+id/detName"
+        android:layout_width="62dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/detailsCountry"
+        app:layout_constraintTop_toTopOf="@+id/detailsCountry" />
+
+    <TextView
+        android:id="@+id/detState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/detailsState"
+        app:layout_constraintTop_toTopOf="@+id/detailsState" />
+
+    <TextView
+        android:id="@+id/detArea"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/detailsArea"
+        app:layout_constraintTop_toTopOf="@+id/detailsArea" />
+
+    <TextView
+        android:id="@+id/detLat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/latlon"
+        app:layout_constraintTop_toTopOf="@+id/latlon" />
+
+    <TextView
+        android:id="@+id/detLon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toBottomOf="@+id/detLat"
+        app:layout_constraintStart_toEndOf="@+id/detLat" />
+
+    <TextView
+        android:id="@+id/detAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/detailsAddress"
+        app:layout_constraintTop_toTopOf="@+id/detailsAddress" />
+
+    <TextView
+        android:id="@+id/detPrice"
+        android:layout_width="58dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/detailsPrice"
+        app:layout_constraintTop_toTopOf="@+id/detailsPrice" />
+
+    <TextView
+        android:id="@+id/detPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/detailsPhone"
+        app:layout_constraintTop_toTopOf="@+id/detailsPhone" />
+
+    <TextView
+        android:id="@+id/detReserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/detailsReserve"
+        app:layout_constraintTop_toTopOf="@+id/detailsReserve" />
+
+    <TextView
+        android:id="@+id/detMobilReserve"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        app:layout_constraintStart_toEndOf="@+id/detailsMobilReserveUrl"
+        app:layout_constraintTop_toTopOf="@+id/detailsMobilReserveUrl" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailsMobilReserveUrl"
+        tools:srcCompat="@tools:sample/avatars" />
+</androidx.constraintlayout.widget.ConstraintLayout>
