@@ -10,6 +10,6 @@ data class User (
     @ColumnInfo(name = "name") var name: String?,
     @ColumnInfo(name = "email") val email: String?,
     @ColumnInfo(name = "regtime") val regtime: String?,
-    @ColumnInfo(name = "lastlog") val lastlog: String?,
+    @ColumnInfo(name = "lastlog") var lastlog: String?,
     @ColumnInfo(name = "password") val password: String?
 )

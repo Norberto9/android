@@ -8,12 +8,12 @@ import retrofit2.http.Query
 
 interface ApiService {
 
-    @GET("api/restaurants")
-    fun listRepos(@Query("city") varos: String="Atlanta"): Call<String?>?
+    //@GET("restaurants")
+    //fun listRepos(@Query("city") varos: String="Dallas"): Call<String?>?
 
-    @GET("api/cities")
+    @GET("cities")
     fun listCities(): Call<City?>
 
-    @GET("api/restaurants")
-    fun listRestaurants(@Query("city") varos: String="Atlanta", @Query("price") ar: Int=1): Call<Restaurants>
+    @GET("restaurants")
+    fun listRestaurants(@Query("city") varos: String="Dallas", @Query("price") ar: Int=1): Call<Restaurants>
 }

@@ -36,4 +36,9 @@ class RoomRepository {
             user
         )
     }
+
+    fun updateUser(user: User)
+    {
+        daou.updateUser(user)
+    }
 }

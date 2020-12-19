@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -17,12 +19,19 @@ import com.example.myapplication2.retrofit.City
 import com.example.myapplication2.retrofit.Restaurant
 import com.example.myapplication2.retrofit.Restaurants
 import com.example.myapplication2.retrofit.RetrofitRepository
+import kotlinx.android.synthetic.main.fragment_restaurants.*
+import kotlinx.coroutines.*
 import retrofit2.Response
+import retrofit2.await
+import retrofit2.awaitResponse
+import java.lang.Runnable
+import kotlin.coroutines.CoroutineContext
 
-class RestaurantsFragment : Fragment() {
+class RestaurantsFragment() : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -94,10 +103,9 @@ class RestaurantsFragment : Fragment() {
             }
 
         }
-
-
-
-
+        go_profile.setOnClickListener(View.OnClickListener {
+            Navigation.findNavController(requireView()).navigate(R.id.action_restaurantsFragment_to_profilFragment)
+        })
     }
     var spinner1 = 1
     var spinner2 = 1
@@ -105,22 +113,33 @@ class RestaurantsFragment : Fragment() {
         var repo = RetrofitRepository()
         var adapter = view?.findViewById<RecyclerView>(R.id.recycleview)?.adapter as RecycleAdapter
         Thread(Runnable {
-            var call = repo.getRestaurants(list!![spinner1]!!)
-            var response: Response<Restaurants> = call?.execute()
-            var s = response?.body()
-            adapter.setData(s!!.restaurants)
+
+
+        var call = repo.getRestaurants(list!![spinner1]!!, spinner2)
+        var response: Response<Restaurants> = call?.execute()
+
+        var s = response?.body()
+            Log.i("valami2", s.toString()!!)
+        adapter.setData(s!!.restaurants)
+
             //recycleView.post()
+            //Log.i("valami2", s.restaurants[0].name!!)
             requireActivity().runOnUiThread(Runnable {
 
-
                 adapter.notifyDataSetChanged()
-                //Log.i("valami", s.restaurants[0].name!!)
+
             })
 
             /*recycleView.adapter = adapter*/
             //text.post{text.setText(s)}
-
+        if(s!!.restaurants.isEmpty())
+        {
+            requireActivity().runOnUiThread{
+                Toast.makeText(requireActivity(), "No restaurants found!", Toast.LENGTH_SHORT).show()
+            }
+        }
         }).start()
+
     }
     companion object{
         var list:List<String?>? = null

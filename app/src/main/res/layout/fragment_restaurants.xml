@@ -16,7 +16,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Restaurants filter" />
+            android:text="Restaurants filter"
+            android:textColor="#AE05AE"
+            android:textSize="24sp" />
 
         <View
             android:id="@+id/view2"
@@ -39,6 +41,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
+
+            <Button
+                android:id="@+id/go_profile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Profile" />
         </LinearLayout>
 
         <androidx.recyclerview.widget.RecyclerView

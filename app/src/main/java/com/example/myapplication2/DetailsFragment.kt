@@ -33,8 +33,10 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        view.findViewById<TextView>(R.id.detName).text = r!!.name
+        view.findViewById<TextView>(R.id.detailsName).text = r!!.name
+        view.findViewById<TextView>(R.id.detailsCity).text = r!!.city
         view.findViewById<TextView>(R.id.detState).text = r!!.state
+        view.findViewById<TextView>(R.id.detName).text = r!!.country
         view.findViewById<TextView>(R.id.detArea).text = r!!.area
         view.findViewById<TextView>(R.id.detLat).text = r!!.lat.toString()
         view.findViewById<TextView>(R.id.detLon).text = r!!.lng.toString()

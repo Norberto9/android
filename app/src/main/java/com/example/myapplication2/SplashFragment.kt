@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.myapplication2.retrofit.City
@@ -39,7 +40,14 @@ class SplashFragment : Fragment() {
                     var s = response?.body()
                     //text.post{text.setText(s)}
                     RestaurantsFragment.list = s?.cities
-                    Navigation.findNavController(requireView()).navigate(R.id.action_splashFragment_to_loginFragment)
+                    if (s != null) {
+                        if(s.cities.size > 0)
+                            Navigation.findNavController(requireView()).navigate(R.id.action_splashFragment_to_loginFragment)
+                    }
+                    else
+                    {
+                        Toast.makeText(requireContext(), "No internet connection or failed to connect to API", Toast.LENGTH_LONG)
+                    }
                 }).start()
             //}
 

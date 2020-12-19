@@ -10,6 +10,7 @@ import android.widget.Button
 import android.widget.EditText
 import androidx.navigation.Navigation
 import com.example.myapplication2.database.RoomRepository
+import java.util.*
 
 class LoginFragment : Fragment() {
 
@@ -43,8 +44,10 @@ class LoginFragment : Fragment() {
                     Log.i("login", user.password!!)
                     if((user.email == view.findViewById<EditText>(R.id.et_email).text.toString())
                     and (user.password == view.findViewById<EditText>(R.id.et_password).text.toString())){
-
+                        user.lastlog = Calendar.getInstance().time.toString()
+                        roomRepository.updateUser(user)
                         Log.i("login", "siker")
+                        ProfilFragment.user = user
                         Navigation.findNavController(requireView()).navigate(R.id.action_loginFragment_to_restaurantsFragment)
                     }
                 }

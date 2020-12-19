@@ -1,11 +1,14 @@
 package com.example.myapplication2
 
+import android.graphics.Color
+import android.graphics.Color.*
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -56,12 +59,15 @@ class RecycleAdapter() :
 
     public fun setData(newData: List<Restaurant>) {
         dataSet = newData
+
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ViewHolder {
         // Create a new view, which defines the UI of the list item
-        val view = LayoutInflater.from(viewGroup.context)
-            .inflate(R.layout.recycleitem, viewGroup, false)
+        var view: CardView = LayoutInflater.from(viewGroup.context)
+            .inflate(R.layout.recycleitem, viewGroup, false) as CardView
+        //view.cardBackgroundColor = Color.parseColor("#AE05AE")
+
         Log.i("valami","hello")
 
         return ViewHolder(view)
@@ -72,6 +78,14 @@ class RecycleAdapter() :
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.bind(dataSet[position])
+        if(position%2 == 0)
+        {
+            (viewHolder.itemView as CardView).setCardBackgroundColor(parseColor("#FFFFFFFF"))
+        }
+        else
+        {
+            (viewHolder.itemView as CardView).setCardBackgroundColor(parseColor("#FFDDDDDD"))
+        }
     }
 
     override fun getItemCount(): Int {

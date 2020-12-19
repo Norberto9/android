@@ -4,6 +4,8 @@ import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
+/*A Restaurant táblában lévő oszlopok meghatározása*/
+
 @Entity
 data class Restaurant(
     @PrimaryKey (autoGenerate = true) val id: Int,
