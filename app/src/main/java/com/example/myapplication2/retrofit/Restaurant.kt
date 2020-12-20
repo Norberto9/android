@@ -8,7 +8,7 @@ import com.google.gson.annotations.SerializedName
 
 @Entity
 data class Restaurant(
-    @Expose @SerializedName("id") val id: Int,
+    @Expose @SerializedName("id") val id: Long,
     @Expose @SerializedName("name") var name: String?,
     @Expose @SerializedName("address") val address: String?,
     @Expose @SerializedName("city") val city: String?,

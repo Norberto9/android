@@ -3,7 +3,7 @@ package com.example.myapplication2.database
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-
+/*A User táblában lévő oszlopok meghatározása*/
 @Entity
 data class User (
     @PrimaryKey(autoGenerate = true) val id: Int?,

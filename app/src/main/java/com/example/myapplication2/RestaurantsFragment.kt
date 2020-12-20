@@ -28,10 +28,6 @@ import java.lang.Runnable
 import kotlin.coroutines.CoroutineContext
 
 class RestaurantsFragment() : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -113,31 +109,22 @@ class RestaurantsFragment() : Fragment() {
         var repo = RetrofitRepository()
         var adapter = view?.findViewById<RecyclerView>(R.id.recycleview)?.adapter as RecycleAdapter
         Thread(Runnable {
+            var call = repo.getRestaurants(list!![spinner1]!!, spinner2)
+            var response: Response<Restaurants> = call?.execute()
 
-
-        var call = repo.getRestaurants(list!![spinner1]!!, spinner2)
-        var response: Response<Restaurants> = call?.execute()
-
-        var s = response?.body()
-            Log.i("valami2", s.toString()!!)
-        adapter.setData(s!!.restaurants)
-
-            //recycleView.post()
-            //Log.i("valami2", s.restaurants[0].name!!)
+            var s = response?.body()
+            //Log.i("valami2", s.toString()!!)
+            adapter.setData(s!!.restaurants)
             requireActivity().runOnUiThread(Runnable {
-
                 adapter.notifyDataSetChanged()
-
             })
 
-            /*recycleView.adapter = adapter*/
-            //text.post{text.setText(s)}
-        if(s!!.restaurants.isEmpty())
-        {
-            requireActivity().runOnUiThread{
-                Toast.makeText(requireActivity(), "No restaurants found!", Toast.LENGTH_SHORT).show()
+            if(s!!.restaurants.isEmpty())
+            {
+                requireActivity().runOnUiThread{
+                    Toast.makeText(requireActivity(), "No restaurants found!", Toast.LENGTH_SHORT).show()
+                }
             }
-        }
         }).start()
 
     }
@@ -145,5 +132,4 @@ class RestaurantsFragment() : Fragment() {
         var list:List<String?>? = null
         var instance:RestaurantsFragment? = null
     }
-
 }

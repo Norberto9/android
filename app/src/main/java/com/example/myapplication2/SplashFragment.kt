@@ -31,27 +31,22 @@ class SplashFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         var repo = RetrofitRepository()
-        //view.findViewById<ImageView>(R.id.imageView).setOnClickListener(
-           // View.OnClickListener {
 
-                Thread(Runnable {
-                    var call = repo.getCities()
-                    var response: Response<City?> = call?.execute()
-                    var s = response?.body()
-                    //text.post{text.setText(s)}
-                    RestaurantsFragment.list = s?.cities
-                    if (s != null) {
-                        if(s.cities.size > 0)
-                            Navigation.findNavController(requireView()).navigate(R.id.action_splashFragment_to_loginFragment)
-                    }
-                    else
-                    {
-                        Toast.makeText(requireContext(), "No internet connection or failed to connect to API", Toast.LENGTH_LONG)
-                    }
-                }).start()
-            //}
-
-        //)
+        Thread(Runnable {
+            var call = repo.getCities()
+            var response: Response<City?> = call?.execute()
+            var s = response?.body()
+            //text.post{text.setText(s)}
+            RestaurantsFragment.list = s?.cities
+            if (s != null) {
+                if(s.cities.size > 0)
+                    Navigation.findNavController(requireView()).navigate(R.id.action_splashFragment_to_loginFragment)
+            }
+            else
+            {
+                Toast.makeText(requireContext(), "No internet connection or failed to connect to API", Toast.LENGTH_LONG)
+            }
+        }).start()
     }
 
 

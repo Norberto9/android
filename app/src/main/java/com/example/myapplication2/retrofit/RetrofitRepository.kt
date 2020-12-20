@@ -12,11 +12,6 @@ class RetrofitRepository {
     val apiservice = retrofit.create(ApiService::class.java)
 
 
-    /*fun getRepo(varos: String = "Dallas"): Call<String?>? {
-        return apiservice.listRepos(varos)
-
-    }*/
-
     fun getCities(): Call<City?>{
         return apiservice.listCities()
     }

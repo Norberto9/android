@@ -30,7 +30,6 @@ class RecycleAdapter() :
 
         init {
             view.setOnClickListener(View.OnClickListener {
-                Log.i("valamimas", adapterPosition.toString())
                 DetailsFragment.r = RecycleAdapter.dataSet[adapterPosition]
                 var v = RestaurantsFragment.instance!!.requireView()
                 Navigation.findNavController(v).navigate(R.id.action_restaurantsFragment_to_detailsFragment)
@@ -67,9 +66,7 @@ class RecycleAdapter() :
         var view: CardView = LayoutInflater.from(viewGroup.context)
             .inflate(R.layout.recycleitem, viewGroup, false) as CardView
         //view.cardBackgroundColor = Color.parseColor("#AE05AE")
-
-        Log.i("valami","hello")
-
+        //Log.i("valami","hello")
         return ViewHolder(view)
     }
 
